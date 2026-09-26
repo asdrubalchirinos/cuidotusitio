@@ -418,6 +418,14 @@ blockquote p {
   color: var(--soft);
 }
 
+.section .price-launch {
+  margin: 0.35rem 0 0.1rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--soft);
+}
+
 .section .price {
   margin: 0 !important;
   font-size: 2.75rem;
@@ -434,9 +442,15 @@ blockquote p {
 }
 
 .price-note {
-  margin: 0 0 1.5rem !important;
+  margin: 0 0 0.35rem !important;
   font-size: 1rem !important;
   font-style: italic;
+  color: var(--muted);
+}
+
+.price-regular {
+  margin: 0 0 1.5rem !important;
+  font-size: 0.9rem !important;
   color: var(--muted);
 }
 
