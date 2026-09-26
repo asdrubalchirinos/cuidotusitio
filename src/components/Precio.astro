@@ -4,7 +4,10 @@ import { whatsappUrl } from '../data/contact';
 
 <section id="precio" class="section reveal">
   <h2>Un precio, sin sorpresas</h2>
-  <p class="price">$890 <span>MXN al mes</span></p>
+  <div class="price-block">
+    <p class="price-plan">Plan Sitio Seguro</p>
+    <p class="price">$890 <span>MXN al mes</span></p>
+  </div>
   <p class="price-note">Más IVA. Con factura.</p>
   <ul class="features">
     <li>Todo lo anterior, cada mes.</li>
@@ -12,13 +15,14 @@ import { whatsappUrl } from '../data/contact';
       Horas adicionales o proyectos especiales: $450 MXN por hora, siempre cotizados antes de
       empezar.
     </li>
-    <li>Permanencia mínima de 3 meses. Después, cancela con 30 días de aviso.</li>
+    <li>Permanencia mínima de 3 meses. Después, puede cancelar con 30 días de aviso.</li>
   </ul>
   <p class="cta">
     <a
+      class="btn-whatsapp"
       href={whatsappUrl('Hola, quiero una revisión gratis de mi sitio.')}
       rel="noopener noreferrer"
-      target="_blank">↗ Quiero una revisión gratis de mi sitio</a
+      target="_blank">Pida su revisión gratis por WhatsApp</a
     >
   </p>
 </section>

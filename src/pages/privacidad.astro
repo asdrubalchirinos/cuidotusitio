@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { EMAIL, whatsappUrl } from '../data/contact';
+---
+
+<BaseLayout
+  title="Aviso de privacidad — Cuido tu Sitio"
+  description="Aviso de privacidad de Cuido tu Sitio. Cómo trato los datos que me envía por WhatsApp o correo."
+>
+  <main class="legal-page">
+    <p class="legal-back"><a href="/">← Cuido tu Sitio</a></p>
+    <h1>Aviso de privacidad</h1>
+    <p class="legal-updated">Última actualización: septiembre de 2026</p>
+
+    <p>
+      Este aviso describe de forma sencilla cómo trato los datos personales que me comparte al
+      contactarme. No hay formularios en este sitio: los datos llegan por WhatsApp o correo
+      electrónico.
+    </p>
+
+    <h2>Responsable</h2>
+    <p>
+      Asdrubal Chirinos, operando como <strong>Cuido tu Sitio</strong>, en Aguascalientes, México.
+      Contacto: <a href={`mailto:${EMAIL}`}>{EMAIL}</a> · <a
+        href={whatsappUrl()}
+        rel="noopener noreferrer"
+        target="_blank">WhatsApp</a
+      >.
+    </p>
+
+    <h2>Datos que puedo recibir</h2>
+    <p>
+      Los que usted envíe al escribirme: nombre, número de teléfono, correo, URL de su sitio web y
+      el contenido del mensaje. No solicito datos sensibles ni documento de identidad para una
+      revisión gratuita.
+    </p>
+
+    <h2>Para qué los uso</h2>
+    <p>
+      Responder su consulta, preparar la revisión gratuita si la pidió y, si contratamos el
+      servicio, prestar el mantenimiento acordado y enviarle reportes o facturación.
+    </p>
+
+    <h2>Con quién los comparto</h2>
+    <p>
+      No vendo ni alquilo sus datos. Solo pueden intervenir herramientas necesarias para
+      comunicarnos o prestar el servicio (por ejemplo, WhatsApp o el proveedor de correo), bajo sus
+      propias políticas.
+    </p>
+
+    <h2>Conservación</h2>
+    <p>
+      Conservo la conversación el tiempo necesario para atenderle y, si hay relación comercial,
+      mientras dure el servicio y las obligaciones legales (por ejemplo, fiscales) lo requieran.
+    </p>
+
+    <h2>Sus derechos (ARCO)</h2>
+    <p>
+      Puede solicitar acceso, rectificación, cancelación u oposición al tratamiento de sus datos, o
+      limitar su uso, escribiéndome a <a href={`mailto:${EMAIL}`}>{EMAIL}</a> o por WhatsApp. Haré
+      lo razonable para atender su solicitud en un plazo breve.
+    </p>
+
+    <h2>Cambios</h2>
+    <p>
+      Si actualizo este aviso, publicaré la versión vigente en esta página con la fecha de
+      actualización.
+    </p>
+
+    <p class="legal-footer-note">
+      <a href="/">Volver al inicio</a>
+    </p>
+  </main>
+</BaseLayout>

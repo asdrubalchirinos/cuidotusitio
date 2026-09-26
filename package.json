@@ -12,7 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.3.5"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.5",
+    "phosphor-astro": "^2.1.0"
   },
   "allowScripts": {
     "esbuild": true

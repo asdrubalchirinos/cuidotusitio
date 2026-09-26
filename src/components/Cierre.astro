@@ -5,13 +5,13 @@ import { EMAIL, whatsappUrl } from '../data/contact';
 <section id="contacto" class="section closing reveal">
   <h2>¿Hace cuánto nadie revisa su sitio?</h2>
   <p>Mándeme el enlace y le digo, gratis, qué es lo más urgente.</p>
-  <p class="cta">
+  <p class="cta cta-stack">
     <a
+      class="btn-whatsapp"
       href={whatsappUrl('Hola, me gustaría una revisión gratis. Mi sitio es: ')}
       rel="noopener noreferrer"
-      target="_blank">↗ Escríbame por WhatsApp</a
+      target="_blank">Pida su revisión gratis por WhatsApp</a
     >
-    <span class="cta-sep">·</span>
-    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+    <a class="cta-email" href={`mailto:${EMAIL}`}>{EMAIL}</a>
   </p>
 </section>

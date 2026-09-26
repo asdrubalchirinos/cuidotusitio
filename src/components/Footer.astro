@@ -1,21 +1,35 @@
 ---
+import GlobeSimple from 'phosphor-astro/GlobeSimple.astro';
+import WhatsappLogo from 'phosphor-astro/WhatsappLogo.astro';
 import { whatsappUrl } from '../data/contact';
-import ThemeSwitcher from './ThemeSwitcher.astro';
 ---
 
 <footer class="site-footer">
   <div>
-    <a href="#problema">El problema</a>
-    <a href="#que-hago">Qué hago</a>
-    <a href="#precio">Precio</a>
-    <a href="#faq">FAQ</a>
+    <a href="/#problema">El problema</a>
+    <a href="/#que-hago">Qué hago</a>
+    <a href="/#precio">Precio</a>
+    <a href="/#faq">FAQ</a>
   </div>
   <div>
-    <a href="https://www.achirinos.com/" rel="noopener noreferrer" target="_blank">achirinos.com</a>
-    <a href={whatsappUrl()} rel="noopener noreferrer" target="_blank">WhatsApp</a>
+    <a
+      class="footer-icon-link"
+      href="https://www.achirinos.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <GlobeSimple width="16" height="16" aria-hidden="true" />
+      <span>achirinos.com</span>
+    </a>
+    <a class="footer-icon-link" href={whatsappUrl()} rel="noopener noreferrer" target="_blank">
+      <WhatsappLogo width="16" height="16" aria-hidden="true" />
+      <span>WhatsApp</span>
+    </a>
   </div>
   <div class="site-footer-meta">
-    <ThemeSwitcher />
-    <p>© 2026 Cuido tu Sitio · Aguascalientes, México</p>
+    <p>
+      <a href="/privacidad">Aviso de privacidad</a>
+    </p>
+    <p>© 2026 Asdrubal Chirinos · Cuido tu Sitio · Aguascalientes</p>
   </div>
 </footer>

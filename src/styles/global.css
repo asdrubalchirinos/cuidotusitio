@@ -231,17 +231,64 @@ a:hover {
   font-size: 1.05rem;
 }
 
-.cta a {
+.cta a:not(.btn-whatsapp) {
   color: var(--text);
 }
 
-.cta a:hover {
+.cta a:not(.btn-whatsapp):hover {
   color: var(--hover);
 }
 
 .cta-sep {
   margin: 0 0.4rem;
   color: var(--muted);
+}
+
+.cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 0.7rem 1.15rem;
+  border-radius: 5px;
+  background: var(--text);
+  color: var(--bg) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.btn-whatsapp:hover {
+  background: var(--hover);
+  color: var(--bg) !important;
+}
+
+@media (max-width: 480px) {
+  .btn-whatsapp {
+    width: 100%;
+  }
+}
+
+.cta-email {
+  font-size: 0.95rem;
+  color: var(--muted) !important;
+}
+
+.cta-email:hover {
+  color: var(--text) !important;
 }
 
 /* Sections */
@@ -326,15 +373,28 @@ blockquote p {
   color: var(--muted);
 }
 
-.price {
-  margin: 0 0 0.35rem !important;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+.price-block {
+  margin: 0 0 0.35rem;
 }
 
-.price span {
+.section .price-plan {
+  margin: 0 0 0.2rem !important;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--soft);
+}
+
+.section .price {
+  margin: 0 !important;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.section .price span {
   font-size: 1.15rem;
   font-weight: 500;
   color: var(--soft);
@@ -345,6 +405,41 @@ blockquote p {
   font-size: 1rem !important;
   font-style: italic;
   color: var(--muted);
+}
+
+/* Quién */
+
+.quien-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.quien-photo {
+  flex-shrink: 0;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  object-fit: cover;
+  background: color-mix(in oklch, var(--line) 55%, var(--bg));
+}
+
+.quien-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.quien-body > p:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 560px) {
+  .quien-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 }
 
 /* FAQ */
@@ -398,6 +493,18 @@ blockquote p {
   color: var(--text);
 }
 
+.footer-icon-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1;
+}
+
+.footer-icon-link svg {
+  flex-shrink: 0;
+  display: block;
+}
+
 .site-footer p {
   margin: 0;
 }
@@ -407,6 +514,72 @@ blockquote p {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.85rem;
+}
+
+/* Legal / 404 */
+
+.legal-page {
+  width: min(100% - 2rem, var(--max));
+  margin: 2rem auto 6rem;
+  padding: 0 0.5rem;
+}
+
+.legal-page h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.legal-page h2 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.legal-page p {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.legal-back {
+  margin-bottom: 1.5rem !important;
+  font-size: 0.95rem !important;
+  color: var(--muted) !important;
+}
+
+.legal-back a {
+  color: var(--muted);
+}
+
+.legal-back a:hover {
+  color: var(--text);
+}
+
+.legal-updated {
+  margin-bottom: 1.5rem !important;
+  font-size: 0.95rem !important;
+  color: var(--muted) !important;
+}
+
+.legal-footer-note {
+  margin-top: 2.5rem !important;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem !important;
+  color: var(--muted) !important;
+}
+
+.legal-footer-note a {
+  color: var(--muted);
+}
+
+.legal-footer-note a:hover {
+  color: var(--text);
 }
 
 /* Theme switcher */
