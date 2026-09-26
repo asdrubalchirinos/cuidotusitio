@@ -206,7 +206,7 @@ a:hover {
 .hero-visual {
   width: 100%;
   margin: 0 0 1.75rem;
-  height: clamp(8.5rem, 28vh, 14rem);
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background: color-mix(in oklch, var(--line) 65%, var(--bg));
 }
