@@ -13,6 +13,14 @@ const {
   description = 'Tú te dedicas a tu negocio. Yo cuido tu sitio web. Mantenimiento mensual para sitios WordPress de consultorios, clínicas, despachos de abogados e inmobiliarias en Aguascalientes.',
   theme = DEFAULT_THEME,
 } = Astro.props;
+
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.png', Astro.site).href;
+const socialTitle =
+  Astro.props.title ?? 'Cuido tu Sitio · Mantenimiento WordPress en Aguascalientes';
+const socialDescription =
+  Astro.props.description ??
+  'Tú te dedicas a tu negocio. Yo cuido tu sitio web. Mantenimiento mensual para sitios WordPress en Aguascalientes.';
 ---
 
 <!doctype html>
@@ -25,15 +33,32 @@ const {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.cuidotusitio.com/" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Cuido tu Sitio" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:secure_url" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Cuido tu Sitio. Tú te dedicas a tu negocio. Yo cuido tu sitio web."
+      content="Escudo con palomita y el texto «Cuido tu Sitio. Tú te dedicas a tu negocio. Yo cuido tu sitio web. Mantenimiento mensual WordPress en Aguascalientes. www.cuidotusitio.com»"
     />
-    <meta name="twitter:card" content="summary" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={socialDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta
+      name="twitter:image:alt"
+      content="Escudo con palomita y el texto «Cuido tu Sitio. Tú te dedicas a tu negocio. Yo cuido tu sitio web.»"
+    />
   </head>
   <body>
     <slot />
