@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Problema from '../components/Problema.astro';
+import RevealScript from '../components/RevealScript.astro';
+import { DEFAULT_THEME, themes } from '../data/themes';
+---
+
+<BaseLayout
+  title="Propuestas de color — Cuido tu Sitio"
+  description="Compare propuestas de fondo y foreground para el landing de Cuido tu Sitio."
+  theme={DEFAULT_THEME}
+>
+  <main>
+    <div class="propuestas-intro">
+      <p>
+        <a href="/">← Volver al inicio</a>
+      </p>
+      <h1>propuestas de color</h1>
+      <p>
+        Cinco pares de fondo y texto. Elija uno para verlo aplicado a toda la página; el fragmento
+        de abajo usa el mismo contenido del landing.
+      </p>
+    </div>
+
+    <ul class="theme-list" role="list">
+      {
+        themes.map((theme) => (
+          <li>
+            <button
+              type="button"
+              class="theme-option"
+              data-theme-id={theme.id}
+              aria-pressed={theme.id === DEFAULT_THEME ? 'true' : 'false'}
+            >
+              <span
+                class="theme-swatch"
+                style={`background: linear-gradient(135deg, ${theme.swatchBg} 55%, ${theme.swatchFg} 55%);`}
+                aria-hidden="true"
+              />
+              <span class="theme-option-body">
+                <h2>{theme.name}</h2>
+                <p>{theme.description}</p>
+              </span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="theme-preview">
+      <p class="eyebrow">Vista previa con el tema seleccionado</p>
+      <Hero />
+      <Problema />
+    </div>
+
+    <p class="propuestas-back cta">
+      <a href="/">↗ Volver al landing</a>
+    </p>
+  </main>
+  <RevealScript />
+</BaseLayout>
+
+<script>
+  import { isThemeId, THEME_STORAGE_KEY } from '../data/themes';
+
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.theme-option');
+  const root = document.documentElement;
+
+  function syncPressed(id: string) {
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.themeId === id)));
+  }
+
+  const current = root.getAttribute('data-theme');
+  if (current) syncPressed(current);
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const id = button.dataset.themeId;
+      if (!id || !isThemeId(id)) return;
+      root.setAttribute('data-theme', id);
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, id);
+      } catch {
+        /* ignore */
+      }
+      syncPressed(id);
+    });
+  });
+</script>

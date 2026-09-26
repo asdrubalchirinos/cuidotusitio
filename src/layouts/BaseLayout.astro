@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import { DEFAULT_THEME, type ThemeId } from '../data/themes';
+
+interface Props {
+  title?: string;
+  description?: string;
+  theme?: ThemeId;
+}
+
+const {
+  title = 'Cuido tu Sitio — Mantenimiento WordPress en Aguascalientes',
+  description = 'Usted se dedica a su negocio. Yo cuido su sitio web. Mantenimiento mensual para sitios WordPress de consultorios, clínicas e inmobiliarias en Aguascalientes.',
+  theme = DEFAULT_THEME,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-theme={theme}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        try {
+          var key = 'cuidotusitio-theme';
+          var allowed = ['niebla', 'olivo', 'atlantico', 'arena', 'pizarra'];
+          var saved = localStorage.getItem(key);
+          if (saved && allowed.indexOf(saved) !== -1) {
+            document.documentElement.setAttribute('data-theme', saved);
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cuidotusitio.com/" />
+    <meta property="og:title" content="Cuido tu Sitio" />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,53 @@
+---
+import { DEFAULT_THEME, themes } from '../data/themes';
+---
+
+<div class="theme-switcher" role="group" aria-label="Tema de color">
+  {
+    themes.map((theme) => (
+      <button
+        type="button"
+        class="theme-dot"
+        data-theme-id={theme.id}
+        aria-label={`Tema ${theme.name}`}
+        title={theme.name}
+        aria-pressed={theme.id === DEFAULT_THEME ? 'true' : 'false'}
+      >
+        <span class="theme-dot-face" aria-hidden="true">
+          <span class="theme-dot-half" style={`background-color: ${theme.swatchBg}`} />
+          <span class="theme-dot-half" style={`background-color: ${theme.swatchFg}`} />
+        </span>
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  import { DEFAULT_THEME, isThemeId, THEME_STORAGE_KEY } from '../data/themes';
+
+  function currentTheme(): string {
+    return document.documentElement.getAttribute('data-theme') || DEFAULT_THEME;
+  }
+
+  function applyTheme(id: string) {
+    if (!isThemeId(id)) return;
+    document.documentElement.setAttribute('data-theme', id);
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, id);
+    } catch {
+      /* ignore */
+    }
+    document.querySelectorAll<HTMLButtonElement>('.theme-dot').forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.themeId === id));
+    });
+  }
+
+  applyTheme(currentTheme());
+
+  document.querySelectorAll<HTMLButtonElement>('.theme-dot').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.themeId;
+      if (id) applyTheme(id);
+    });
+  });
+</script>

@@ -1,0 +1,21 @@
+---
+import { whatsappUrl } from '../data/contact';
+import ThemeSwitcher from './ThemeSwitcher.astro';
+---
+
+<footer class="site-footer">
+  <div>
+    <a href="#problema">El problema</a>
+    <a href="#que-hago">Qué hago</a>
+    <a href="#precio">Precio</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div>
+    <a href="https://www.achirinos.com/" rel="noopener noreferrer" target="_blank">achirinos.com</a>
+    <a href={whatsappUrl()} rel="noopener noreferrer" target="_blank">WhatsApp</a>
+  </div>
+  <div class="site-footer-meta">
+    <ThemeSwitcher />
+    <p>© 2026 Asdrúbal Chirinos · Aguascalientes, México</p>
+  </div>
+</footer>
