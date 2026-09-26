@@ -1,7 +1,8 @@
 ---
+import EnvelopeSimple from 'phosphor-astro/EnvelopeSimple.astro';
 import GlobeSimple from 'phosphor-astro/GlobeSimple.astro';
 import WhatsappLogo from 'phosphor-astro/WhatsappLogo.astro';
-import { whatsappUrl } from '../data/contact';
+import { EMAIL, whatsappUrl } from '../data/contact';
 ---
 
 <footer class="site-footer">
@@ -25,11 +26,15 @@ import { whatsappUrl } from '../data/contact';
       <WhatsappLogo width="16" height="16" aria-hidden="true" />
       <span>WhatsApp</span>
     </a>
+    <a class="footer-icon-link" href={`mailto:${EMAIL}`}>
+      <EnvelopeSimple width="16" height="16" aria-hidden="true" />
+      <span>{EMAIL}</span>
+    </a>
   </div>
   <div class="site-footer-meta">
     <p>
       <a href="/privacidad">Aviso de privacidad</a>
     </p>
-    <p>© 2026 Asdrubal Chirinos · Cuido tu Sitio · Aguascalientes</p>
+    <p>© 2026 Cuido tu Sitio · Aguascalientes</p>
   </div>
 </footer>

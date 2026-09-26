@@ -255,6 +255,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   box-sizing: border-box;
   min-height: 44px;
   padding: 0.7rem 1.15rem;
@@ -269,6 +270,11 @@ a:hover {
   transition:
     background-color 180ms ease,
     color 180ms ease;
+}
+
+.btn-whatsapp svg {
+  flex-shrink: 0;
+  display: block;
 }
 
 .btn-whatsapp:hover {

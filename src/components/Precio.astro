@@ -1,4 +1,5 @@
 ---
+import WhatsappLogo from 'phosphor-astro/WhatsappLogo.astro';
 import { whatsappUrl } from '../data/contact';
 ---
 
@@ -22,7 +23,10 @@ import { whatsappUrl } from '../data/contact';
       class="btn-whatsapp"
       href={whatsappUrl('Hola, quiero una revisión gratis de mi sitio.')}
       rel="noopener noreferrer"
-      target="_blank">Pida su revisión gratis por WhatsApp</a
+      target="_blank"
     >
+      <WhatsappLogo width="20" height="20" aria-hidden="true" />
+      <span>Pida su revisión gratis por WhatsApp</span>
+    </a>
   </p>
 </section>
