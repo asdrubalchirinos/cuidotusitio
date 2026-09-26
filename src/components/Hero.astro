@@ -4,21 +4,34 @@ import { whatsappUrl } from '../data/contact';
 ---
 
 <section class="hero reveal">
-  <h1>cuido tu sitio</h1>
-  <p class="tagline">Usted se dedica a su negocio. Yo cuido su sitio web.</p>
-  <p class="lede">
-    Mantenimiento mensual para sitios WordPress de consultorios, clínicas e inmobiliarias en
-    Aguascalientes.
-  </p>
-  <p class="cta">
-    <a
-      class="btn-whatsapp"
-      href={whatsappUrl('Hola, me interesa una revisión gratis de mi sitio.')}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <WhatsappLogo width="20" height="20" aria-hidden="true" />
-      <span>Pida su revisión gratis por WhatsApp</span>
-    </a>
-  </p>
+  <div class="hero-visual">
+    <img
+      src="/images/hero-placeholder.svg"
+      width="1600"
+      height="560"
+      alt=""
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+  <div class="hero-copy">
+    <h1>cuido tu sitio</h1>
+    <p class="tagline">Tú te dedicas a tu negocio. Yo cuido tu sitio web.</p>
+    <p class="lede">
+      Mantenimiento mensual para sitios WordPress de consultorios, clínicas e inmobiliarias en
+      Aguascalientes.
+    </p>
+    <p class="cta">
+      <a
+        class="btn-whatsapp"
+        href={whatsappUrl('Hola, Asdrúbal. Me gustaría que revisaras mi sitio gratis.')}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <WhatsappLogo width="20" height="20" aria-hidden="true" />
+        <span>Pide tu revisión gratis por WhatsApp</span>
+      </a>
+    </p>
+    <p class="cta-note">Sin compromiso. Te respondo yo.</p>
+  </div>
 </section>

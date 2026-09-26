@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title = 'Cuido tu Sitio — Mantenimiento WordPress en Aguascalientes',
-  description = 'Usted se dedica a su negocio. Yo cuido su sitio web. Mantenimiento mensual para sitios WordPress de consultorios, clínicas e inmobiliarias en Aguascalientes.',
+  description = 'Tú te dedicas a tu negocio. Yo cuido tu sitio web. Mantenimiento mensual para sitios WordPress de consultorios, clínicas e inmobiliarias en Aguascalientes.',
   theme = DEFAULT_THEME,
 } = Astro.props;
 ---
@@ -26,8 +26,12 @@ const {
     <meta name="description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.cuidotusitio.com/" />
-    <meta property="og:title" content="Cuido tu Sitio" />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta
+      property="og:image:alt"
+      content="Cuido tu Sitio. Tú te dedicas a tu negocio. Yo cuido tu sitio web."
+    />
     <meta name="twitter:card" content="summary" />
   </head>
   <body>
