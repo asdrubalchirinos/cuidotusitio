@@ -455,6 +455,7 @@ blockquote p {
   border-radius: 50%;
   border: 1px solid var(--line);
   object-fit: cover;
+  object-position: 50% 25%;
   background: color-mix(in oklch, var(--line) 55%, var(--bg));
 }
 
