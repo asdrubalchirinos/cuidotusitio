@@ -479,22 +479,73 @@ blockquote p {
 /* FAQ */
 
 .faq {
-  margin: 0;
+  border-top: 1px solid var(--line);
 }
 
-.faq > div {
-  margin: 0 0 1.5rem;
+.faq details {
+  border-bottom: 1px solid var(--line);
+  interpolate-size: allow-keywords;
 }
 
-.faq dt {
-  margin: 0 0 0.35rem;
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 2.75rem;
+  padding: 0.9rem 0;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.45;
+  cursor: pointer;
+  list-style: none;
 }
 
-.faq dd {
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: '';
+  flex: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 2px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 2px 100% no-repeat;
+  transition: background-size 250ms var(--ease);
+}
+
+.faq details[open] > summary::after {
+  background-size:
+    100% 2px,
+    2px 0;
+}
+
+.faq summary:hover {
+  color: var(--hover);
+}
+
+.faq summary:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.faq details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition:
+    block-size 300ms var(--ease),
+    content-visibility 300ms allow-discrete;
+}
+
+.faq details[open]::details-content {
+  block-size: auto;
+}
+
+.faq-answer {
   margin: 0;
+  padding: 0 2rem 1.25rem 0;
   font-size: 1.125rem;
   line-height: 1.7;
   color: var(--soft);
@@ -765,6 +816,14 @@ blockquote p {
   }
 
   .nav-toggle span {
+    transition: none;
+  }
+
+  .faq summary::after {
+    transition: none;
+  }
+
+  .faq details::details-content {
     transition: none;
   }
 }
